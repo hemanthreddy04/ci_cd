@@ -1,0 +1,9 @@
+bundle:
+  name: databricks-cicd-practice
+targets:
+  dev:
+    mode: development
+  prod:
+    mode: production
+    workspace:
+      host: https://dbc-f0a5be0e-59f1.cloud.databricks.com

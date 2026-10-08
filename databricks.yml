@@ -31,3 +31,4 @@ targets:
     mode: production
     workspace:
       host: https://dbc-f0a5be0e-59f1.cloud.databricks.com
+      root_path: /Workspace/Users/hemanthreddy040904@gmail.com/.bundle/${bundle.name}/${bundle.target}

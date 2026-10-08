@@ -1,8 +1,32 @@
 bundle:
   name: databricks-cicd-practice
+
+resources:
+  jobs:
+    sample_job:
+      name: sample_job
+
+      tasks:
+        - task_key: dev_sample_task
+          spark_python_task:
+            python_file: ./feature1/feature1.py
+
+        - task_key: dev_sample_task2
+          depends_on:
+            - task_key: dev_sample_task
+          spark_python_task:
+            python_file: ./feature2/feature2.py
+
+        - task_key: dev_sample_task3
+          depends_on:
+            - task_key: dev_sample_task2
+          spark_python_task:
+            python_file: ./feature3/sample.py
+
 targets:
   dev:
     mode: development
+
   prod:
     mode: production
     workspace:
